@@ -2,4 +2,432 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--background-image-path);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-color: var(--background-color);
+  padding: 10px;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: start;
+  align-items: start;
+  block-size: 100vh;
+}
+
+.header__title {
+  margin-block-start: 65px;
+}
+
+.header__theme-menu {
+  align-self: end;
+  margin-block-start: 63px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  inline-size: 70px;
+  block-size: 26px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  text-transform: lowercase;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px var(--hover-menu-color) solid;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px var(--menu-button-color) solid;
+}
+
+.header__theme-menu-button_active {
+  border: 1px var(--menu-button-color) solid;
+  pointer-events: none;
+}
+
+.header__theme-menu-item {
+  font-family: var(--font-family-main);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--menu-button-color);
+}
+
+.title {
+  font-family: var(--font-family-main);
+  font-weight: 700;
+  font-style: bold;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  letter-spacing: 0;
+  color: var(--title-color);
+  text-shadow: 4px 4px var(--accent-color);
+}
+
+.subtitle {
+  font-family: var(--font-family-main);
+  font-weight: 700;
+  font-style: bold;
+  font-size: 18px;
+  line-height: 23.4px;
+  letter-spacing: 0;
+  color: var(--subtitle-color);
+  background-color: var(--accent-color);
+}
+
+.subtitle_header {
+  align-self: end;
+  margin-block-start: 55px;
+  margin-block-end: 31px;
+}
+
+.subtitle_thin {
+  font-weight: 400;
+  font-style: normal;
+}
+
+.decorated-zone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  inset-inline-end: 0px;
+  inset-block-start: 0px;
+  block-size: 25px;
+  inline-size: 25px;
+  border-block-start: var(--decoration-color) 1px solid;
+  border-inline-end: var(--decoration-color) 1px solid;
+}
+
+.decorated-zone::after {
+  content: "";
+  align-self: start;
+  block-size: 25px;
+  inline-size: 25px;
+  border-inline-start: var(--decoration-color) 1px solid;
+  border-block-end: var(--decoration-color) 1px solid;
+}
+
+.decoration {
+  position: absolute;
+  inline-size: 52px;
+  block-size: 26px;
+  font-family: var(--font-family-main);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--accent-color);
+  display: var(--decoration-display-mode);
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-inline-end: 9px;
+  align-self: end;
+}
+
+.decoration::after {
+  content: "";
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  block-size: 9px;
+  inline-size: 9px;
+  background-color: var(--accent-color);
+  border-radius: 10px;
+}
+
+.articles {
+  margin-block-start: 50px;
+  display: grid;
+}
+
+.articles:first-child {
+  margin-block-start: 30px;
+}
+
+.articles__link {
+  text-decoration: none;
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+.articles__link:hover {
+  border-block-end: 1px var(--text-color) solid;
+}
+
+.articles__link:focus-visible {
+  border: 1px var(--text-color) solid;
+}
+
+.articles__title {
+  font-family: var(--font-family-main);
+  font-weight: 700;
+  font-style: bold;
+  font-size: 18px;
+  line-height: 23.4px;
+  letter-spacing: 0;
+  color: var(--articles-title-color);
+  margin-block-end: 20px;
+  max-inline-size: 355px;
+}
+
+.articles__item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.articles__paragraph {
+}
+
+.articles__text {
+  font-family: var(--font-family-main);
+  margin-block-start: 10px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 23.4px;
+  letter-spacing: 0;
+  color: var(--text-color);
+}
+
+.gallery {
+  margin-block-start: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery__grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.gallery__image {
+  inline-size: 100%;
+  object-fit: cover;
+}
+
+.gallery__image:first-child {
+  margin-block-start: 10px;
+}
+
+.gallery__image_books {
+  grid-area: books;
+}
+
+.gallery__image_sunset {
+  grid-area: sunset;
+}
+
+.gallery__image_ice-cream {
+  grid-area: ice-cream;
+}
+
+.gallery__image_tape {
+  grid-area: tape;
+}
+
+.gallery__image_street {
+  grid-area: street;
+}
+
+.footer {
+  margin-block-start: 49px;
+  block-size: 648px;
+}
+
+.title_footer {
+  margin: auto;
+  text-shadow: 4px 2px var(--accent-color);
+  margin-block-start: 275px;
+}
+
+@media screen and (375px < width < 767px) {
+  .gallery__image {
+    inline-size: 100%;
+  }
+}
+
+@media screen and (width > 767px) {
+  .header {
+    block-size: 1024px;
+  }
+
+  .articles__title {
+    max-inline-size: 236px;
+  }
+
+  .title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .page {
+    padding: 20px;
+  }
+
+  .subtitle_header {
+    max-inline-size: 365px;
+    margin-block-start: 162px;
+    margin-block-end: 0;
+  }
+
+  .articles_half {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .articles:first-child {
+    margin-block-start: 40px;
+  }
+
+  .articles {
+    margin-block-start: 80px;
+    gap: 0 20px;
+  }
+
+  .gallery {
+    margin-block-start: 80px;
+  }
+
+  .gallery__grid {
+    max-block-size: 740px;
+    display: grid;
+    gap: 20px;
+    align-items: start;
+    margin-block-start: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 26% 31% 43%;
+    grid-template-areas:
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
+  }
+
+  .gallery__image {
+    block-size: 100%;
+    inline-size: 100%;
+    /*max-inline-size: 479px;*/
+    margin-block-start: 0px;
+  }
+
+  .gallery__image:first-child {
+    margin-block-start: 0;
+  }
+
+  .header__theme-menu {
+    margin-block-start: 170px;
+  }
+
+  .header__title {
+    margin-block-start: 175px;
+    margin-inline-start: -20px;
+  }
+
+  .decorated-zone::after {
+    margin-block-start: 138px;
+  }
+
+  .footer {
+    block-size: 984px;
+    margin-block-start: 120px;
+  }
+
+  .title_footer {
+    margin-block-start: 440px;
+  }
+}
+
+@media screen and (width > 1023px) {
+  .subtitle_header {
+    max-inline-size: 491px;
+    margin-block-start: 114px;
+    margin-block-end: 114px;
+  }
+
+  .articles__item_row {
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .header__theme-menu {
+    margin-block-start: 147px;
+  }
+
+  .articles {
+    gap: 0 12px;
+  }
+
+  .articles:first-child {
+    margin-block-start: 40px;
+  }
+
+  .articles__title {
+    max-inline-size: 315px;
+  }
+
+  .header {
+    block-size: 768px;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__theme-menu {
+    align-self: center;
+    margin-block-start: 0;
+  }
+
+  .header__title {
+    margin-block-start: 273px;
+    margin-inline-start: -20px;
+  }
+
+  .decorated-zone::after {
+    margin-block-start: -23px;
+  }
+
+  .gallery {
+    margin-block-start: 80px;
+  }
+
+  .footer {
+    max-block-size: 728px;
+    margin-block-start: 119px;
+  }
+
+  .title_footer {
+    margin-block-start: 295px;
+  }
+
+  .gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 26% 31% 43%;
+    max-block-size: 1010px;
+  }
 }
