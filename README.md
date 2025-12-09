@@ -1,1 +1,1 @@
-<https://github.com/ruslanlukichev/slozhno-sosredotochitsya-fd>
+https://github.com/ruslanlukichev/slozhno-sosredotochitsya-fd
