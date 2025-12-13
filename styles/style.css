@@ -313,7 +313,7 @@
     align-items: start;
     margin-block-start: 20px;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 26% 31% 43%;
+    grid-template-rows: 192px 230px 318px;
     grid-template-areas:
       "sunset sunset ice-cream"
       "tape books ice-cream"
@@ -322,6 +322,9 @@
 
   .gallery__image {
     block-size: 100%;
+  }
+
+  .gallery__image:first-child {
     margin-block-start: 0px;
   }
 
@@ -341,7 +344,7 @@
 
   .footer {
     min-block-size: 1024px;
-    margin-block-start: 120px;
+    margin-block-start: 80px;
   }
 
   .title_footer {
@@ -405,7 +408,6 @@
 
   .footer {
     min-block-size: 768px;
-    margin-block-start: 119px;
   }
 
   .title_footer {
@@ -413,7 +415,7 @@
   }
 
   .gallery__grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 26% 31% 43%;
+    grid-template-rows: 260px 315px 433px;
   }
+
 }
